@@ -1,0 +1,180 @@
+/* Professional White Sidebar with Forest Green & Sage Accents */
+.admin-sidebar {
+  width: 260px;
+  min-width: 260px;
+  background-color: #ffffff;
+  border-right: 1px solid #e8ece9;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
+}
+
+.admin-brand-container {
+  padding: 1.5rem 1.25rem 1.25rem;
+  border-bottom: 1px solid #f1f4f2;
+}
+
+.admin-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.admin-brand-badge {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #1e3a29 0%, #2d553c 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(30, 58, 41, 0.2);
+}
+
+.brand-leaf-icon {
+  color: #a7f3d0;
+}
+
+.admin-brand-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e3a29;
+  letter-spacing: -0.02em;
+}
+
+.brand-nest {
+  color: #d97706;
+}
+
+.brand-caption {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.admin-nav-list {
+  flex: 1;
+  padding: 1.25rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  overflow-y: auto;
+}
+
+.admin-nav-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #9ca3af;
+  letter-spacing: 0.08em;
+  padding: 0 0.75rem 0.5rem;
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: 8px;
+  color: #4b5563;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.18s ease-in-out;
+  border: 1px solid transparent;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.admin-nav-item:hover {
+  background-color: #f4f7f5;
+  color: #1e3a29;
+}
+
+.admin-nav-item.active {
+  background-color: #eef5f1;
+  color: #1e3a29;
+  font-weight: 600;
+  border-color: #d1e5d9;
+}
+
+.admin-nav-item.active .admin-nav-icon {
+  color: #1e3a29;
+}
+
+.admin-nav-icon {
+  color: #6b7280;
+  transition: color 0.18s ease-in-out;
+  flex-shrink: 0;
+}
+
+.admin-nav-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.nav-badge.orange {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.nav-badge.green {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.admin-sidebar-footer {
+  padding: 1rem 0.85rem;
+  border-top: 1px solid #f1f4f2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.admin-nav-item.store-link {
+  color: #059669;
+}
+
+.admin-nav-item.store-link:hover {
+  background-color: #ecfdf5;
+}
+
+.admin-nav-item.logout-btn {
+  color: #dc2626;
+}
+
+.admin-nav-item.logout-btn:hover {
+  background-color: #fef2f2;
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    position: static;
+  }
+}

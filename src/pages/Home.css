@@ -1,0 +1,423 @@
+/* Home Page Styling - MSV Naturals Theme */
+.home-page {
+  padding-bottom: 50px;
+}
+
+/* Hero Section */
+.hero-section {
+  background: radial-gradient(circle at top left, #fefce8 0%, #f0fdf4 50%, #fafaf9 100%);
+  padding: 64px 0 72px;
+  border-bottom: 1px solid #e7e5e4;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ecfdf5;
+  color: #064e3b;
+  border: 1px solid #a7f3d0;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 6px rgba(6, 78, 59, 0.05);
+}
+
+.hero-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #064e3b;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: #57534e;
+  line-height: 1.65;
+  margin-bottom: 28px;
+  max-width: 540px;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  background: #064e3b;
+  color: #ffffff;
+  padding: 13px 26px;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(6, 78, 59, 0.25);
+}
+
+.hero-btn:hover {
+  background: #022c22;
+  transform: translateY(-2px);
+}
+
+.hero-btn-secondary {
+  background: #ffffff;
+  color: #064e3b;
+  border: 1.5px solid #064e3b;
+  padding: 13px 24px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.hero-btn-secondary:hover {
+  background: #ecfdf5;
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e7e5e4;
+}
+
+.stat-unit {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #064e3b;
+  font-family: 'Playfair Display', serif;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: #78716c;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 28px;
+  background: #d6d3d1;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-card-featured {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(6, 78, 59, 0.12);
+  border: 3px solid #ffffff;
+  background: #fff;
+  max-width: 440px;
+  width: 100%;
+}
+
+.hero-featured-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hero-card-featured:hover .hero-featured-img {
+  transform: scale(1.03);
+}
+
+.hero-featured-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.hero-featured-badge h4 {
+  font-size: 1.05rem;
+  color: #064e3b;
+  margin: 4px 0 2px;
+  font-weight: 700;
+}
+
+.featured-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #b45309;
+}
+
+.featured-price span {
+  font-size: 0.85rem;
+  color: #a8a29e;
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+
+/* Category Strip */
+.categories-strip {
+  background: #ffffff;
+  padding: 24px 0;
+  border-bottom: 1px solid #e7e5e4;
+}
+
+.categories-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.categories-header-row h3 {
+  font-size: 1.1rem;
+  color: #064e3b;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+.view-all-cats {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #047857;
+  text-decoration: none;
+}
+
+.view-all-cats:hover {
+  text-decoration: underline;
+}
+
+.categories-scroll-wrapper {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.category-pill-card {
+  padding: 9px 18px;
+  background: #fafaf9;
+  border: 1px solid #e7e5e4;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #44403c;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.category-pill-card:hover {
+  background: #ecfdf5;
+  color: #064e3b;
+  border-color: #a7f3d0;
+  transform: translateY(-1px);
+}
+
+/* Sections */
+.section-padding {
+  padding: 56px 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #b45309;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  color: #064e3b;
+  margin: 0;
+  font-weight: 700;
+}
+
+.view-all-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #047857;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+
+.view-all-link:hover {
+  color: #064e3b;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Promo Banner */
+.promo-banner-section {
+  padding: 24px 0 36px;
+}
+
+.promo-banner-box {
+  background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+  border-radius: 20px;
+  padding: 44px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(6, 78, 59, 0.25);
+  gap: 30px;
+}
+
+.promo-tag {
+  display: inline-block;
+  background: #f59e0b;
+  color: #1c1917;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.promo-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.promo-content p {
+  color: #ecfdf5;
+  font-size: 0.98rem;
+  margin-bottom: 16px;
+}
+
+.promo-code-pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+}
+
+.promo-btn {
+  background: #ffffff;
+  color: #064e3b;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.promo-btn:hover {
+  background: #ecfdf5;
+  transform: translateY(-2px);
+}
+
+/* Why Shop With Us */
+.why-us-section {
+  background: #ffffff;
+  padding: 56px 0;
+  border-top: 1px solid #e7e5e4;
+  border-bottom: 1px solid #e7e5e4;
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.why-card {
+  padding: 24px;
+  border-radius: 14px;
+  background: #fafaf9;
+  border: 1px solid #f5f5f4;
+  transition: all 0.2s;
+}
+
+.why-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-color: #a7f3d0;
+}
+
+.why-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #ecfdf5;
+  color: #047857;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.why-card h3 {
+  font-size: 1.15rem;
+  color: #064e3b;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.why-card p {
+  color: #57534e;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+  .promo-banner-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+}

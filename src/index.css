@@ -1,0 +1,244 @@
+/* ==========================================================================
+   MSV Naturals Global Design System & Variables
+   Inspired by msvnaturals.com (Warm earthy tones, emerald, amber, and stone)
+   ========================================================================== */
+:root {
+  /* Brand Colors - MSV Naturals palette */
+  --primary: #064e3b;          /* Deep Forest Emerald (#064e3b / #047857) */
+  --primary-hover: #022c22;
+  --primary-light: #ecfdf5;
+  --primary-glow: rgba(4, 120, 87, 0.2);
+
+  --secondary: #d97706;        /* Warm Amber / Harvest Gold (#d97706 / #b45309) */
+  --secondary-hover: #b45309;
+  --secondary-light: #fffbeb;
+
+  --accent-sale: #b91c1c;      /* Rust red for discounts */
+  --accent-badge: #047857;     /* Pure organic green */
+  --accent-star: #f59e0b;      /* Honey gold */
+
+  /* Surface / Background */
+  --bg-body: #fafaf9;          /* Stone-50 / warm natural parchment */
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-alt: #f5f5f4;
+
+  /* Text */
+  --text-main: #1c1917;        /* Stone-900 */
+  --text-muted: #57534e;       /* Stone-600 */
+  --text-sub: #a8a29e;         /* Stone-400 */
+
+  /* Borders */
+  --border-light: #e7e5e4;     /* Stone-200 */
+  --border-focus: #047857;     /* Emerald-700 */
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(28, 25, 23, 0.04);
+  --shadow-sm: 0 1px 3px rgba(28, 25, 23, 0.06), 0 1px 2px rgba(28, 25, 23, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(28, 25, 23, 0.07), 0 2px 4px -2px rgba(28, 25, 23, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(28, 25, 23, 0.08), 0 4px 6px -4px rgba(28, 25, 23, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(28, 25, 23, 0.1), 0 8px 10px -6px rgba(28, 25, 23, 0.04);
+  --shadow-card: 0 2px 8px rgba(28, 25, 23, 0.05);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition: 0.25s ease;
+  --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+/* ====================== BASE RESETS ====================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  background-color: var(--bg-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-body);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ====================== CONTAINER ====================== */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ====================== SCROLLBAR ====================== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+
+/* ====================== BUTTONS ====================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 6px var(--primary-glow);
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px var(--primary-glow);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  background: var(--secondary);
+  color: #ffffff;
+}
+.btn-secondary:hover {
+  background: var(--secondary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+.btn-outline:hover {
+  background: var(--primary-light);
+}
+
+.btn-danger {
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+.btn-danger:hover { background: #fecaca; }
+
+/* ====================== BADGES ====================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-sale {
+  background: #fef2f2;
+  color: var(--accent-sale);
+  border: 1px solid #fecaca;
+}
+
+.badge-new {
+  background: #ecfdf5;
+  color: var(--accent-badge);
+  border: 1px solid #a7f3d0;
+}
+
+/* ====================== FORM ELEMENTS ====================== */
+.form-input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.12);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

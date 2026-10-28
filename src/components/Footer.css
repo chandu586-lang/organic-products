@@ -1,0 +1,179 @@
+/* MSV Naturals Organic Footer Styles */
+.site-footer {
+  background: #1b4332;
+  color: #d8f3dc;
+  margin-top: 60px;
+}
+
+.footer-trust-strip {
+  background: #2d6a4f;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.trust-icon {
+  color: #95d5b2;
+  flex-shrink: 0;
+}
+
+.trust-item h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.trust-item p {
+  font-size: 0.82rem;
+  color: #b7e4c7;
+  margin: 0;
+}
+
+.footer-main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  padding: 60px 20px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.brand-logo-emoji {
+  font-size: 1.5rem;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.brand-name span {
+  color: #74c69d;
+}
+
+.footer-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #b7e4c7;
+  margin-bottom: 16px;
+}
+
+.organic-cert-badge {
+  display: inline-block;
+  background: rgba(82, 183, 136, 0.2);
+  color: #95d5b2;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.footer-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 18px 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #d8f3dc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #95d5b2;
+}
+
+.newsletter-text {
+  font-size: 0.88rem;
+  color: #b7e4c7;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  gap: 8px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #40916c;
+  background: #2d6a4f;
+  color: #fff;
+  font-size: 0.88rem;
+  outline: none;
+}
+
+.newsletter-input::placeholder {
+  color: #95d5b2;
+}
+
+.newsletter-btn {
+  background: #52b788;
+  color: #081c15;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.newsletter-btn:hover {
+  background: #74c69d;
+}
+
+.footer-bottom-bar {
+  background: #081c15;
+  padding: 20px 0;
+  font-size: 0.85rem;
+  color: #74c69d;
+}
+
+.bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .footer-main-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

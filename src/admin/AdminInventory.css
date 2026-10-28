@@ -1,0 +1,843 @@
+/* Admin Inventory Page Styles */
+.inventory-view {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e3a29;
+  margin: 0;
+}
+
+.page-desc {
+  font-size: 0.88rem;
+  color: #6b7280;
+  margin-top: 0.35rem;
+}
+
+.stock-kpis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.kpi-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.kpi-tag .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.kpi-tag.healthy .dot { background-color: #10b981; }
+.kpi-tag.low .dot     { background-color: #f59e0b; }
+.kpi-tag.out .dot     { background-color: #ef4444; }
+
+/* ── Toolbar: search + add button + two selects ── */
+.inventory-controls {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffffff;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid #e8ece9;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Search — compact fixed width, does not grow to fill row */
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: #f9fafb;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  padding: 0 0.75rem;
+  height: 36px;
+  flex: 0 0 260px;
+  width: 260px;
+  max-width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search-wrap:focus-within {
+  background-color: #ffffff;
+  border-color: #1e3a29;
+  box-shadow: 0 0 0 3px rgba(30, 58, 41, 0.08);
+}
+
+.search-wrap .icon {
+  color: #9ca3af;
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+}
+
+.search-wrap input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  min-width: 0;
+  font-size: 0.84rem;
+  color: #1f2937;
+}
+
+/* Select dropdowns — fixed width so they don't shrink/expand on search focus */
+.select-input {
+  height: 38px;
+  flex: 0 0 160px;
+  width: 160px;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  padding: 0 0.65rem;
+  font-size: 0.82rem;
+  background-color: #ffffff;
+  color: #374151;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+
+.select-input:focus {
+  border-color: #1e3a29;
+  box-shadow: 0 0 0 3px rgba(30, 58, 41, 0.08);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 900px) {
+  .select-input {
+    flex: 1 1 140px;
+    width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .inventory-controls {
+    gap: 0.5rem;
+  }
+  .search-wrap {
+    flex: 1 1 100%;
+  }
+  .select-input {
+    flex: 1 1 calc(50% - 0.25rem);
+    width: auto;
+  }
+  .btn-add-inventory {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}
+
+/* ── Table card ── */
+.inventory-table-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e8ece9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.inv-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.86rem;
+  table-layout: auto;
+}
+
+.inv-table th {
+  padding: 1rem 1.25rem;
+  background-color: #fafbfc;
+  color: #6b7280;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+/* Give the ACTION column plenty of room for all 3 buttons */
+.inv-table th:last-child,
+.inv-table td:last-child {
+  white-space: nowrap;
+  width: 290px;
+  min-width: 290px;
+}
+
+.inv-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.inv-table tr:hover td {
+  background-color: #fcfdfc;
+}
+
+.inv-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.inv-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+}
+
+.inv-prod-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.inv-name {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 0.88rem;
+}
+
+.inv-sku {
+  font-size: 0.73rem;
+  color: #9ca3af;
+}
+
+.stock-number {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 0.9rem;
+}
+
+/* Base status badge — modifier classes (.healthy, .low, .out) add colors */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+/* Utility helpers used in the table */
+.fw-semibold { font-weight: 600; }
+
+.table-empty {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.status-badge.healthy {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+
+.status-badge.low {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.out {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.btn-adjust {
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1e3a29;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-adjust:hover {
+  background-color: #1e3a29;
+  color: #ffffff;
+  border-color: #1e3a29;
+}
+
+.adjust-box {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.adjust-input {
+  width: 65px;
+  padding: 0.3rem 0.45rem;
+  border: 1px solid #1e3a29;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.btn-save-adjust {
+  background-color: #1e3a29;
+  color: #ffffff;
+  border: none;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-cancel-adjust {
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Add Inventory Button */
+.btn-add-inventory {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  height: 38px;
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  background-color: #1e3a29;
+  color: #ffffff;
+  border: 1px solid #1e3a29;
+  border-radius: 7px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-add-inventory:hover {
+  background-color: #162c1f;
+  border-color: #162c1f;
+}
+
+.btn-add-inventory:active {
+  transform: translateY(1px);
+}
+
+/* Add Inventory Modal */
+.inv-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.inv-modal-dialog {
+  background-color: #ffffff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  animation: invModalFadeIn 0.2s ease-out;
+}
+
+@keyframes invModalFadeIn {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.inv-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.inv-modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e3a29;
+  margin: 0 0 0.3rem;
+}
+
+.inv-modal-desc {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.inv-close-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.inv-close-btn:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+.inv-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-group label {
+  font-size: 0.81rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  background-color: #ffffff;
+  color: #1f2937;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #1e3a29;
+  box-shadow: 0 0 0 2px rgba(30, 58, 41, 0.1);
+}
+
+.inv-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.inv-image-upload-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 12px;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.inv-image-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inv-image-preview img {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.btn-inv-remove-img {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.inv-image-upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.inv-image-upload-label:hover {
+  background: #065f46;
+  color: #ffffff;
+}
+
+.inv-image-file-input {
+  display: none;
+}
+
+.btn-modal-cancel {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-modal-cancel:hover {
+  background-color: #e2e8f0;
+  color: #1e293b;
+}
+
+.btn-modal-submit {
+  background-color: #1e3a29;
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 0.6rem 1.35rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-modal-submit:hover { background-color: #162c1f; }
+
+/* Action Column Buttons: + quick-add, Add Stock, Edit, Delete */
+.inv-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.btn-inv-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.38rem 0.85rem;
+  min-width: 78px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+  box-sizing: border-box;
+  letter-spacing: 0.01em;
+}
+
+/* Add Stock button */
+.btn-inv-action.add-stock {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-color: #6ee7b7;
+  min-width: 90px;
+}
+.btn-inv-action.add-stock:hover {
+  background-color: #065f46;
+  color: #ffffff;
+  border-color: #065f46;
+}
+
+/* Edit button */
+.btn-inv-action.edit {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+  min-width: 68px;
+}
+.btn-inv-action.edit:hover {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+/* Delete button */
+.btn-inv-action.delete {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border-color: #fca5a5;
+  min-width: 78px;
+}
+.btn-inv-action.delete:hover {
+  background-color: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+
+/* Delete Dialog Box */
+.delete-dialog-box {
+  max-width: 440px;
+  text-align: center;
+}
+
+.delete-icon-wrapper {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #fee2e2;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.1rem;
+}
+
+.delete-dialog-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.6rem;
+}
+
+.delete-dialog-desc {
+  font-size: 0.86rem;
+  color: #64748b;
+  margin: 0 0 1.5rem;
+  line-height: 1.55;
+}
+
+.delete-footer {
+  justify-content: center;
+}
+
+.btn-modal-delete {
+  background-color: #dc2626;
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 0.6rem 1.35rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-modal-delete:hover { background-color: #b91c1c; }
+
+/* Quick Stock & Add Stock Modal */
+.stock-number-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.btn-stock-quick-add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.btn-stock-quick-add:hover {
+  background-color: #065f46;
+  color: #ffffff;
+  border-color: #065f46;
+}
+
+.stock-modal-dialog { max-width: 460px; }
+
+.stock-modal-product-summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.stock-summary-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #d1d5db;
+}
+
+.stock-summary-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stock-summary-name {
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 0.92rem;
+}
+
+.stock-summary-category {
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.quick-qty-pills {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.65rem;
+}
+
+.quick-qty-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #6b7280;
+  margin-right: 0.25rem;
+}
+
+.btn-qty-pill {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #1e3a29;
+  border-radius: 20px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-qty-pill:hover {
+  background-color: #1e3a29;
+  color: #ffffff;
+  border-color: #1e3a29;
+}
+
+.stock-calculation-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1.1rem;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  color: #065f46;
+  margin-top: 1.25rem;
+}
+
+.math-sign {
+  font-weight: 700;
+  color: #047857;
+}
+
+.new-total-highlight {
+  margin-left: auto;
+  font-weight: 600;
+}
+
+.new-total-highlight strong {
+  color: #064e3b;
+  font-size: 0.95rem;
+}
